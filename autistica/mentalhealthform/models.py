@@ -8,7 +8,7 @@ class MHFormData (models.Model):
     depression = models.IntegerField();
     anxiety = models.IntegerField();
     stress = models.IntegerField();
-    date = models.DateFields();
+    date = models.DateField();
     q1 =  models.PositiveSmallIntegerField();
     q2 =  models.PositiveSmallIntegerField();
     q3 =  models.PositiveSmallIntegerField();
