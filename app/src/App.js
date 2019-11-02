@@ -14,20 +14,7 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/mentalHealth">MentalHealth</Link>
-            </li>
-            <li>
-              <Link to="/settings">Settings</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Navbar />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -35,13 +22,16 @@ export default function App() {
             <MentalHealth />
           </Route>
           <Route path="/adjustments">
-            <MentalHealth />
+            <Adjustments />
           </Route>
           <Route path="/organisation">
-            <MentalHealth />
+            <Organisation />
+          </Route>
+          <Route path="/workCulture">
+            <WorkCulture />
           </Route>
           <Route path="/settings">
-            <MentalHealth />
+            <Settings />
           </Route>
           <Route path="/">
             <Home />
@@ -55,27 +45,26 @@ export default function App() {
 function Home() {
 
   return (
-    //navbar should be at top -> dillon and klaudia
-    <div>
-      <UserProfile name="Stephen" />
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 text-center">
-          <Link to="/mentalHealth" type="button" class="btn">Mental Health</Link>
-        </div>
-        <div class="col-md-3 col-sm-6 text-center">
-          <Link to="/mentalHealth" type="button" class="btn">Adjustments</Link>
-        </div>
-        <div class="col-md-3 col-sm-6 text-center">
-          <Link to="/mentalHealth" type="button" class="btn">Organisation</Link>
-        </div>
-        <div class="col-md-3 col-sm-6 text-center">
-          <Link to="/mentalHealth" type="button" class="btn">Work Culture</Link>
+      <div>
+        <UserProfile name="Stephen" />
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <Link to="/mentalHealth" type="button" class="btn">Mental Health</Link>
+          </div>
+          <div class="col-12 text-center">
+            <Link to="/adjustments" type="button" class="btn">Adjustments</Link>
+          </div>
+          <div class="col-12 text-center">
+            <Link to="/organisation" type="button" class="btn">Organisation</Link>
+          </div>
+          <div class="col-12 text-center">
+            <Link to="/workCulture" type="button" class="btn">Work Culture</Link>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     //something to take up all empty space
   );
 }
@@ -88,9 +77,47 @@ function UserProfile(props){
   );
 }
 
+function MentalHealth() {
+  return <h2>MentalHealth</h2>;
+}
+
+function Adjustments() {
+  return <h2>Adjustments</h2>;
+}
+
+function Organisation() {
+  return <h2>Organisation</h2>;
+}
+
+function WorkCulture() {
+  return <h2>WorkCulture</h2>;
+}
+
 function Settings() {
   return <h2>Settings</h2>;
 }
-function MentalHealth() {
-  return <h2>MentalHealth</h2>;
+
+function Navbar(){
+  return (
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <button type="button" class="navbar-toggler text-cente" data-toggle="collapse" data-target="#collapse_target">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapse_target">
+        <ul class="navbar-nav">
+          <li class ="nav-item">
+            <a class="nav-link" href="/">AUTISTICA</a>
+          </li>
+          <li class ="nav-item">
+            <a class="nav-link" href="/settings">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+
+}
+
+function Footer(){
+
 }
