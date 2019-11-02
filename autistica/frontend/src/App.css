@@ -1,9 +1,18 @@
+#rcorners {
+  border-radius: 25px;
+}
+
+
+#collapse_target{
+  background-color: #343a40;
+}
+
 .space{
   margin-top: 25px;
 }
 
-body{
-
+div{
+  background-color: #ffcce0;
 }
 
 .btn{
@@ -13,6 +22,7 @@ body{
   display: flex;
   justify-content: center;
   text-align: center;
+
 }
 
 .App {
