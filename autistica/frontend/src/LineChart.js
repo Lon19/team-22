@@ -77,11 +77,12 @@ const data = [
 class LineChartComponent extends Component {
 	render () {
 		return (
+
 	        <LineChart
            width={700}
           height={350}
 		        data={data}
-		        margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
+		        margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
 		    	>
 				<CartesianGrid strokeDasharray="3 3" fill="white" />
 				<XAxis dataKey="date" />
@@ -95,6 +96,7 @@ class LineChartComponent extends Component {
 		        <ReferenceLine y={20} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
 		        <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 		      </LineChart>
+
 	     );
 	}
 }

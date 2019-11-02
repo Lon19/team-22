@@ -79,6 +79,7 @@ const data = [
 class App extends Component {
 	render () {
 		return (
+
 		       <BarChart
               width={700}
               height={350}
@@ -97,6 +98,7 @@ class App extends Component {
 		          <ReferenceLine y={14} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
 		          <ReferenceLine y={19} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 		       </BarChart>
+
 		);
 	}
 }
