@@ -63,8 +63,8 @@ def record_upload(request):
             q15 =  column[17],
             q16 =  column[18],
             q17 =  column[19],
-            q18 =  mcolumn[20],
-            q19 =  mcolumn[21],
+            q18 =  column[20],
+            q19 =  column[21],
             q20 =  column[22],
             q21 =  column[23],
         )
