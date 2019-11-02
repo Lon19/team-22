@@ -10,7 +10,8 @@ import {
   ComposedChart,
   Area,
   ReferenceLine,
-  Bar
+  Bar,
+  ResponsiveContainer
 } from "recharts";
 
 const data = [
@@ -72,24 +73,17 @@ const data = [
   }
 ];
 
-const normal = [0];
-const mild = 9;
-const moderate=13;
-const severe=20;
-const extremely=27;
+function interval(props){
+	return props.score
+}
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <h1>Mental Health</h1>
-        </header>
-        <h2 style={{ textAlign: "left" }}> Depression Graph </h2>
+function line(props) {    
+	return (
+      <ResponsiveContainer>        
         <LineChart
           width={730}
           height={250}
-          data={data}
+          data={props.data}
           margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -102,14 +96,10 @@ class App extends Component {
           <ReferenceLine y={9} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
           <ReferenceLine y={13} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
           <ReferenceLine y={20} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
-          <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red" />
-
-
-
-        </LineChart>
-      </div>
-    );
-  }
+          <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
+       </LineChart>
+     </ResponsiveContainer>
+     );
 }
 
 export default App;
