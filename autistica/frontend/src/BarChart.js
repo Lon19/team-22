@@ -79,24 +79,24 @@ const data = [
 class App extends Component {    
 	render () {
 		return (
-	       <BarChart
-	          width={730}
-	          height={250}
-	          data={data}
-	          margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
-	        >
-	          <CartesianGrid strokeDasharray="3 3" />
-	          <XAxis dataKey="date" />
-	          <YAxis dateKey="score" tick={false}/>
-	          <Tooltip />
-	          <Legend />
-	          <Bar dataKey="score" fill="#8884d8" />
-	          <ReferenceLine y={0} label={{ infront: 'true', position: 'right',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
-	          <ReferenceLine y={9} label={{ infront: 'true', position: 'right',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
-	          <ReferenceLine y={13} label={{ infront: 'true', position: 'right',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
-	          <ReferenceLine y={20} label={{ infront: 'true', position: 'right',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
-	          <ReferenceLine y={27} label={{ infront: 'true', position: 'right', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
-	       </BarChart>
+	       <ResponsiveContainer>
+		       <BarChart
+		          data={data}
+		          margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
+		        >
+		          <CartesianGrid strokeDasharray="3 3" />
+		          <XAxis dataKey="date" />
+		          <YAxis dateKey="score" tick={false}/>
+		          <Tooltip />
+		          <Legend />
+		          <Bar dataKey="score" fill="#8884d8" />
+		          <ReferenceLine y={0} label={{ infront: 'true', position: 'right',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
+		          <ReferenceLine y={9} label={{ infront: 'true', position: 'right',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
+		          <ReferenceLine y={13} label={{ infront: 'true', position: 'right',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
+		          <ReferenceLine y={20} label={{ infront: 'true', position: 'right',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
+		          <ReferenceLine y={27} label={{ infront: 'true', position: 'right', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
+		       </BarChart>
+		   </ResponsiveContainer>
 		);
 	}
 }
