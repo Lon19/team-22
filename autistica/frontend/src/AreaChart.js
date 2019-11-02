@@ -78,6 +78,8 @@ class App extends Component {
 	render () {
 		return (
 	        <AreaChart
+          width={700}
+          height={350}
 		        data={data}
 		        margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
 		    	>
@@ -86,7 +88,7 @@ class App extends Component {
 				<YAxis dateKey="score" tick={false}/>
 				<Tooltip />
 				<Legend />
-				<Line type="monotone" name="score" dataKey="score" stroke="#8884d8" />
+				<Area type="monotone" name="score" dataKey="score" stroke="#8884d8" />
 				<ReferenceLine y={0} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
 				<ReferenceLine y={14} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
 				<ReferenceLine y={18} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
@@ -98,4 +100,3 @@ class App extends Component {
 }
 
 export default App;
-
