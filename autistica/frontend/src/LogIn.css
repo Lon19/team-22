@@ -18,3 +18,8 @@
   background-color:white;
 
 }
+
+.small{
+  height: inherit;
+  width: 80px;
+}

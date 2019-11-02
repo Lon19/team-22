@@ -3,7 +3,9 @@
 import React from "react";
 import "./App.css";
 import LineChart from "./LineChart";
+import LogIn from "./LogIn"
 import 'bootstrap/dist/css/bootstrap.css' ;
+//import smileyOne from "smileyFace.png";
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +36,9 @@ export default function App() {
           <Route path="/settings">
             <Settings />
           </Route>
+          <Route path="/login">
+            <LogIn />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -46,7 +51,6 @@ export default function App() {
 function Home() {
 
   return (
-
       <div>
         <UserProfile name="Stephen" />
       <div class="container">
@@ -84,10 +88,24 @@ function UserProfile(props){
 
 function MentalHealth() {
   return (
-    <>
-    <h2>MentalHealth</h2>
-    <LineChart />
-    </>
+    <div class="container">
+     <div class="row">
+      <h2 class="text-center">Mental Health</h2>
+      <center>
+       <LineChart />
+      </center>
+     </div>
+    </div>
+  );
+}
+
+function displaySmiley(props){
+  return(
+    //return image based on props.choice
+    //1= happy
+    //2= Normal
+    //3= sad
+    <h1>cool</h1>
   );
 }
 
@@ -105,6 +123,15 @@ function WorkCulture() {
 
 function Settings() {
   return <h2>Settings</h2>;
+}
+
+function Login(){
+  return(
+    <div>
+      <LogIn />
+    </div>
+  );
+
 }
 
 function Navbar(){

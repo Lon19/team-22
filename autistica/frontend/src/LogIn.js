@@ -2,7 +2,10 @@
 
 import './LogIn.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import {
+  Link
+} from "react-router-dom";
 
 
 class LogIn extends React.Component {
@@ -20,6 +23,8 @@ handleChange(event) {
 
 }
   handleSubmit(event){
+    this.props.history.push('/kjjk');
+    console.log('huhu');
     event.preventDefault();
   }
 
@@ -33,12 +38,13 @@ handleChange(event) {
         <h1>Username: </h1>
         <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-      <input type="submit" value="Submit" onSubmit={this.handleSubmit}/>
+      {/* <input type="submit" value="Submit" onClick={this.handleSubmit}/> */}
+      <Link className="btn btn-primary small" to="/">Submit</Link>
       </form>
       </header>
       </div>
     );
   }
 }
-ReactDOM.render(<LogIn/>, document.getElementById('root'));
+
 export default LogIn;
