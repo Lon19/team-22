@@ -4,7 +4,7 @@ import './App.css';
 
 
 
-function App() {
+function mhPage() {
   return (
     <div className="App">
       <header className="App-header">
@@ -32,4 +32,4 @@ function App() {
 }
 
 
-export default App;
+export default mhPage;

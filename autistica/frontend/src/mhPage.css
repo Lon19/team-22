@@ -1,12 +1,12 @@
-.App {
+.mhPage {
   text-align: center;
 }
 
-.App-logo {
+.mhPage-logo {
   height: 40vmin;
 }
 
-.App-header {
+.mhPage-header {
   background-color: pink;
   min-height: 100vh;
   display: flex;
@@ -65,6 +65,6 @@
   color: white;
 }
 
-.App-link {
+.mhPage-link {
   color: #09d3ac;
 }
