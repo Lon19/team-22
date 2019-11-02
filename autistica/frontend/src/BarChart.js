@@ -86,7 +86,7 @@ class App extends Component {
 		          data={data}
 		          margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
 		        >
-		          <CartesianGrid strokeDasharray="3 3" />
+		          <CartesianGrid strokeDasharray="3 3" fill="white" />
 		          <XAxis dataKey="date" />
 		          <YAxis dateKey="score" tick={false}/>
 		          <Tooltip />
