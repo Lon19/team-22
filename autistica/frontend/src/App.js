@@ -4,7 +4,7 @@ import React from "react";
 import "./App.css";
 import LineChartComponent from "./LineChart";
 import BarChart from "./BarChart";
-import AreaChart from "./AreaChart";
+//import AreaChart from "./AreaChart";
 import LogIn from "./LogIn"
 import 'bootstrap/dist/css/bootstrap.css' ;
 //import smileyOne from "smileyFace.png";
@@ -58,7 +58,6 @@ export default function App() {
 }
 
 function Home() {
-
   return (
       <div>
         <UserProfile name="Stephen" />
@@ -138,7 +137,7 @@ function MentalHealthStress() {
     <div className="container">
       <h2 className="text-center">Mental Health (Stress)</h2>
       <center>
-          <AreaChart />
+        {/*  <AreaChart /> */}
       </center>
       <div className="row">
         <div className="col text-center">
