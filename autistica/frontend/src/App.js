@@ -79,10 +79,13 @@ class App extends Component {
 	render () {
 		return (
 		<div>
+
         <header>
         <div class="navbar">
+            <div class="mhNavBar">
           <a class="active" href="#mentalHealth">Mental Health</a>
-        </div>
+          </div>
+
         <h2 style={{ textAlign: "center" }}> Depression Line Graph </h2>
         <center>
 	        <LineChart
@@ -125,6 +128,7 @@ class App extends Component {
 	          <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 	       </BarChart>
          </center>
+         </div>
          </header>
 	     </div>
 		);
