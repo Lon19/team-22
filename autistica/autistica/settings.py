@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mentalhealthform.apps.MentalhealthformConfig',
     'rest_framework',
+    'import_export',
 ]
 
 MIDDLEWARE = [
