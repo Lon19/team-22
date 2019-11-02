@@ -4,7 +4,7 @@ from django.db.models import Model
 # Create your models here.
 
 class MHFormData (models.Model):
-    formID = models.BigIntegerField();
+    formID = models.CharField(max_length=20);
     username = models.CharField(max_length=20);
     depression = models.BigIntegerField();
     anxiety = models.BigIntegerField();
