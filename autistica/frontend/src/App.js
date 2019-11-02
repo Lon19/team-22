@@ -90,7 +90,7 @@ class App extends Component {
           width={730}
           height={250}
           data={data}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
@@ -98,11 +98,11 @@ class App extends Component {
           <Tooltip />
           <Legend />
           <Line type="monotone" name="progress" dataKey="score" stroke="#8884d8" />
-          <ReferenceLine y={0} label={{ position: 'top',  value: 'Normal', fill: 'black', fontSize: 14 }} stroke="green"/>
-          <ReferenceLine y={9} label={{ position: 'top',  value: 'Mild', fill: 'black', fontSize: 14 }} stroke="blue"/>
-          <ReferenceLine y={13} label={{ position: 'top',  value: 'Moderate', fill: 'black', fontSize: 14 }} stroke="black"/>
-          <ReferenceLine y={20} label={{ position: 'top',  value: 'Severe', fill: 'black', fontSize: 14 }} stroke="purple"/>
-          <ReferenceLine y={27} label={{ position: 'top',  value: 'Extremely Severe', fill: 'black', fontSize: 14 }} stroke="red" />
+          <ReferenceLine y={0} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
+          <ReferenceLine y={9} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
+          <ReferenceLine y={13} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
+          <ReferenceLine y={20} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
+          <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red" />
 
 
 
