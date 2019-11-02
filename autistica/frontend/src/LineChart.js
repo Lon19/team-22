@@ -78,10 +78,7 @@ class App extends Component {
 	render () {
 		return (
 		<div>
-        <header>
-			<h1>Mental Health</h1>
-        </header>
-        <h2 style={{ textAlign: "left" }}> Depression Line Graph </h2>      
+        <h2 style={{ textAlign: "left" }}> Depression Line Graph </h2>
 	        <LineChart
 	          width={730}
 	          height={250}
@@ -100,7 +97,7 @@ class App extends Component {
 	          <ReferenceLine y={20} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
 	          <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 	       </LineChart>
-	       <h2 style={{ textAlign: "left" }}> Depression Bar Graph </h2> 
+	       <h2 style={{ textAlign: "left" }}> Depression Bar Graph </h2>
 	       <BarChart
 	          width={730}
 	          height={250}
