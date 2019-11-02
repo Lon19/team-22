@@ -2,7 +2,8 @@
 
 import React from "react";
 import "./App.css";
-import LineChart from "./LineChart";
+import LineChartComponent from "./LineChart";
+import BarChart from "./BarChart";
 import LogIn from "./LogIn"
 import 'bootstrap/dist/css/bootstrap.css' ;
 //import smileyOne from "smileyFace.png";
@@ -18,11 +19,18 @@ export default function App() {
     <Router>
       <div>
         <Navbar />
+        <div className="space"></div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/mentalHealth">
-            <MentalHealth />
+          <Route path="/mentalHealthAnxiety">
+            <MentalHealthAnxiety />
+          </Route>
+          <Route path="/mentalHealthDepression">
+            <MentalHealthDepression />
+          </Route>
+          <Route path="/mentalHealthStress">
+            <MentalHealthStress />
           </Route>
           <Route path="/adjustments">
             <Adjustments />
@@ -53,19 +61,19 @@ function Home() {
   return (
       <div>
         <UserProfile name="Stephen" />
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <Link to="/mentalHealth" type="button" class="btn">Mental Health</Link>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 text-center">
+            <Link to="/mentalHealthDepression" type="button" className="btn">Mental Health</Link>
           </div>
-          <div class="col-12 text-center">
-            <Link to="/adjustments" type="button" class="btn">Adjustments</Link>
+          <div className="col-12 text-center">
+            <Link to="/adjustments" type="button" className="btn">Adjustments</Link>
           </div>
-          <div class="col-12 text-center">
-            <Link to="/organisation" type="button" class="btn">Organisation</Link>
+          <div className="col-12 text-center">
+            <Link to="/organisation" type="button" className="btn">Organisation</Link>
           </div>
-          <div class="col-12 text-center">
-            <Link to="/workCulture" type="button" class="btn">Work Culture</Link>
+          <div className="col-12 text-center">
+            <Link to="/workCulture" type="button" className="btn">Work Culture</Link>
           </div>
         </div>
       </div>
@@ -80,34 +88,69 @@ function ExampleGraph(){
 
 function UserProfile(props){
   return(
-    <div class="container">
-      <h2 class="text-center">Welcome Back {props.name} !</h2>
+    <div className="container">
+      <h2 className="text-center">Welcome Back {props.name} !</h2>
     </div>
   );
 }
 
-function MentalHealth() {
-  return (
-    <div class="container">
-     <div class="row">
-      <h2 class="text-center">Mental Health</h2>
-      <center>
-       <LineChart />
-      </center>
-     </div>
-    </div>
-  );
-}
-
-function displaySmiley(props){
+function MentalHealthDepression(){
   return(
-    //return image based on props.choice
-    //1= happy
-    //2= Normal
-    //3= sad
-    <h1>cool</h1>
+    <div className="container">
+      <h2 className="text-center">Mental Health (Depression)</h2>
+      <center>
+          <LineChartComponent />
+      </center>
+      <div className="row">
+        <div className="col text-center">
+          <Link to="/mentalHealthAnxiety" type="button" className="btn">Anxiety</Link>
+        </div>
+        <div className="col text-center">
+          <Link to="/mentalHealthStress" type="button" className="btn">Stress</Link>
+        </div>
+      </div>
+    </div>
   );
 }
+
+function MentalHealthAnxiety() {
+  return (
+    <div className="container">
+      <h2 className="text-center">Mental Health (Anxiety)</h2>
+      <center>
+          <BarChart />
+      </center>
+      <div className="row">
+        <div className="col text-center">
+          <Link to="/mentalHealthDepression" type="button" className="btn">Depression</Link>
+        </div>
+        <div className="col text-center">
+          <Link to="/mentalHealthStress" type="button" className="btn">Stress</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MentalHealthStress() {
+  return (
+    <div className="container">
+      <h2 className="text-center">Mental Health (Anxiety)</h2>
+      <center>
+          <BarChart />
+      </center>
+      <div className="row">
+        <div className="col text-center">
+          <Link to="/mentalHealthDepression" type="button" className="btn">Depression</Link>
+        </div>
+        <div className="col text-center">
+          <Link to="/mentalHealthAnxiety" type="button" className="btn">Anxiety</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 function Adjustments() {
   return <h2>Adjustments</h2>;
@@ -122,7 +165,27 @@ function WorkCulture() {
 }
 
 function Settings() {
-  return <h2>Settings</h2>;
+  return (
+    <div className="container">
+    <h1>Mental Health Graph Color Options</h1>
+    <div className="row">
+      <div className="col">
+        Blue
+      </div>
+      <div className="col">
+        <input type="checkbox" name="graph-color" value="BarChartColor"/>
+      </div>
+    </div>
+      <div className="row">
+        <div className="col">
+          Red
+        </div>
+        <div className="col">
+          <input type="checkbox" name="graph-color" value="BarChartColor"/>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Login(){
@@ -136,17 +199,17 @@ function Login(){
 
 function Navbar(){
   return (
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-      <button type="button" class="navbar-toggler text-cente" data-toggle="collapse" data-target="#collapse_target">
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+      <button type="button" className="navbar-toggler text-cente" data-toggle="collapse" data-target="#collapse_target">
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapse_target">
-        <ul class="navbar-nav">
-          <li class ="nav-item">
-            <a class="nav-link" href="/">AUTISTICA</a>
+      <div className="collapse navbar-collapse" id="collapse_target">
+        <ul className="navbar-nav">
+          <li className ="nav-item">
+            <a className="nav-link" href="/">AUTISTICA</a>
           </li>
-          <li class ="nav-item">
-            <a class="nav-link" href="/settings">Settings</a>
+          <li className ="nav-item">
+            <a className="nav-link" href="/settings">Settings</a>
           </li>
         </ul>
       </div>
