@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from mentalhealthform.views import record_upload
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mentalhealthform.urls')),
+    path('record_upload/',record_upload,name='record_upload'),
 ]
