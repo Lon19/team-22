@@ -21,9 +21,15 @@ function App() {
        <div className = "subGraph2">
           <p>You're doing good, keep it up.</p>
        </div>
+
        </div>
+
+
       </header>
     </div>
+
   );
 }
+
+
 export default App;
