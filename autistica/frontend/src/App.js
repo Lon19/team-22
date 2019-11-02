@@ -1,26 +1,98 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  LineChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Line,
+  ComposedChart,
+  Area,
+  Bar
+} from "recharts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const data = [
+  {
+    date: "Week 1",
+    score: 10
+  },
+  {
+    date: "Week 2",
+    score: 25
+  },
+  {
+    date: "Week 3",
+    score: 19
+  },
+  {
+    date: "Week 4",
+    score: 9
+  },
+  {
+    date: "Week 5",
+    score: 11
+  },
+  {
+    date: "Week 6",
+    score: 15
+  },
+  {
+    date: "Week 7",
+    score: 1
+  },
+  {
+    date: "Week 8",
+    score: 10
+  },
+  {
+    date: "Week 9",
+    score: 25
+  },
+  {
+    date: "Week 10",
+    score: 19
+  },
+  {
+    date: "Week 11",
+    score: 9
+  },
+  {
+    date: "Week 12",
+    score: 11
+  },
+  {
+    date: "Week 13",
+    score: 15
+  },
+  {
+    date: "Week 14",
+    score: 9
+  }
+];
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <h1>Mental Health</h1>
+        </header>
+        <h2 style={{ textAlign: "left" }}>Graph </h2>
+        <LineChart
+          width={730}
+          height={250}
+          data={data}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis dateKey="score"/>
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" name="progress" dataKey="score" stroke="#8884d8" />
+        </LineChart>
+      </div>
+    );
+  }
 }
-
 export default App;
