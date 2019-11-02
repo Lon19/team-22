@@ -81,7 +81,7 @@ class App extends Component {
         <ResponsiveContainer width={700} height="80%">
 	        <LineChart
 		        data={data}
-		        margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
+		        margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
 		    	>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="date" />
