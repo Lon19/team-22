@@ -76,11 +76,12 @@ const data = [
 
 
 
-class App extends Component {    
+class App extends Component {
 	render () {
 		return (
-	       <ResponsiveContainer>
 		       <BarChart
+              width={700}
+              height={350}
 		          data={data}
 		          margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
 		        >
@@ -90,13 +91,12 @@ class App extends Component {
 		          <Tooltip />
 		          <Legend />
 		          <Bar dataKey="score" fill="#8884d8" />
-		          <ReferenceLine y={0} label={{ infront: 'true', position: 'right',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
-		          <ReferenceLine y={9} label={{ infront: 'true', position: 'right',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
-		          <ReferenceLine y={13} label={{ infront: 'true', position: 'right',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
-		          <ReferenceLine y={20} label={{ infront: 'true', position: 'right',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
-		          <ReferenceLine y={27} label={{ infront: 'true', position: 'right', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
+		          <ReferenceLine y={0} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Normal', fill: 'black', fontSize: 18}} stroke="green"/>
+		          <ReferenceLine y={7} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Mild', fill: 'black', fontSize: 18}} stroke="blue"/>
+		          <ReferenceLine y={9} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Moderate', fill: 'black', fontSize: 18}} stroke="black"/>
+		          <ReferenceLine y={14} label={{ infront: 'true', position: 'insideBottomRight',  value: 'Severe', fill: 'black', fontSize: 18}} stroke="purple"/>
+		          <ReferenceLine y={19} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 		       </BarChart>
-		   </ResponsiveContainer>
 		);
 	}
 }
