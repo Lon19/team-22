@@ -1,32 +1,33 @@
 from django.db import models
 from django.db.models import Model
+
 # Create your models here.
 
 class MHFormData (models.Model):
     formID = models.BigIntegerField();
-    username = models.BigIntegerField();
-    depression = models.IntegerField();
-    anxiety = models.IntegerField();
-    stress = models.IntegerField();
+    username = models.CharField(max_length=20);
+    depression = models.BigIntegerField();
+    anxiety = models.BigIntegerField();
+    stress = models.BigIntegerField();
     date = models.DateField();
-    q1 =  models.PositiveSmallIntegerField();
-    q2 =  models.PositiveSmallIntegerField();
-    q3 =  models.PositiveSmallIntegerField();
-    q4 =  models.PositiveSmallIntegerField();
-    q5 =  models.PositiveSmallIntegerField();
-    q6 =  models.PositiveSmallIntegerField();
-    q7 =  models.PositiveSmallIntegerField();
-    q8 =  models.PositiveSmallIntegerField();
-    q9 =  models.PositiveSmallIntegerField();
-    q10 =  models.PositiveSmallIntegerField();
-    q11 =  models.PositiveSmallIntegerField();
-    q12 =  models.PositiveSmallIntegerField();
-    q13 =  models.PositiveSmallIntegerField();
-    q14 =  models.PositiveSmallIntegerField();
-    q15 =  models.PositiveSmallIntegerField();
-    q16 =  models.PositiveSmallIntegerField();
-    q17 =  models.PositiveSmallIntegerField();
-    q18 =  models.PositiveSmallIntegerField();
-    q19 =  models.PositiveSmallIntegerField();
-    q20 =  models.PositiveSmallIntegerField();
-    q21 =  models.PositiveSmallIntegerField();
+    q1 =  models.PositiveIntegerField();
+    q2 =  models.PositiveIntegerField();
+    q3 =  models.PositiveIntegerField();
+    q4 =  models.PositiveIntegerField();
+    q5 =  models.PositiveIntegerField();
+    q6 =  models.PositiveIntegerField();
+    q7 =  models.PositiveIntegerField();
+    q8 =  models.PositiveIntegerField();
+    q9 =  models.PositiveIntegerField();
+    q10 =  models.PositiveIntegerField();
+    q11 =  models.PositiveIntegerField();
+    q12 =  models.PositiveIntegerField();
+    q13 =  models.PositiveIntegerField();
+    q14 =  models.PositiveIntegerField();
+    q15 =  models.PositiveIntegerField();
+    q16 =  models.PositiveIntegerField();
+    q17 =  models.PositiveIntegerField();
+    q18 =  models.PositiveIntegerField();
+    q19 =  models.PositiveIntegerField();
+    q20 =  models.PositiveIntegerField();
+    q21 =  models.PositiveIntegerField();

@@ -1,7 +1,8 @@
 //import './App.css';
 
 import React from "react";
-import "./App.css"
+import "./App.css";
+import LineChart from "./LineChart";
 import 'bootstrap/dist/css/bootstrap.css' ;
 import {
   BrowserRouter as Router,
@@ -69,6 +70,10 @@ function Home() {
   );
 }
 
+function ExampleGraph(){
+
+}
+
 function UserProfile(props){
   return(
     <div class="container">
@@ -78,7 +83,12 @@ function UserProfile(props){
 }
 
 function MentalHealth() {
-  return <h2>MentalHealth</h2>;
+  return (
+    <>
+    <h2>MentalHealth</h2>
+    <LineChart />
+    </>
+  );
 }
 
 function Adjustments() {
