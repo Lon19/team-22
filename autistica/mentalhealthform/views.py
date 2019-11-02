@@ -37,8 +37,8 @@ def record_upload(request):
     next(io_string)
     for column in csv.reader(io_string, delimiter=',', quotechar="|"):
         _, created = MHFormData.objects.update_or_create(
-            formID = int(column[26]),
-            username = column[2][:4],
+            formID = column[26],
+            username = 10,#column[2][:4],
             depression = (int(column[3])+int(column[5])+int(column[10])+
                 int(column[16])+int(column[17])+int(column[21]))*2,
             anxiety = (int(column[2])+int(column[4])+int(column[7])+
