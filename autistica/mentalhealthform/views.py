@@ -37,14 +37,14 @@ def record_upload(request):
     next(io_string)
     for column in csv.reader(io_string, delimiter=',', quotechar="|"):
         _, created = MHFormData.objects.update_or_create(
-            formID = column[26],
-            username = column[2],
-            depression = (column[3]+column[5]+column[10]+
-                column[16]+column[17]+column[21])*2,
-            anxiety = (column[2]+column[4]+column[7]+
-                column[9]+column[15]+column[19]+column[20])*2,
-            stress = column[1]+column[6]+column[8]+column[11]+
-                column[12]+column[14]+column[18],
+            formID = int(column[26]),
+            username = column[2][:4],
+            depression = (int(column[3])+int(column[5])+int(column[10])+
+                int(column[16])+int(column[17])+int(column[21]))*2,
+            anxiety = (int(column[2])+int(column[4])+int(column[7])+
+                int(column[9])+int(column[15])+int(column[19])+int(column[20]))*2,
+            stress = (int(column[1])+int(column[6])+int(column[8])+int(column[11])+
+                int(column[12])+int(column[14])+int(column[18]))*2,
             date = column[24],
             q1 =  column[3],
             q2 =  column[4],
@@ -67,6 +67,6 @@ def record_upload(request):
             q19 =  column[21],
             q20 =  column[22],
             q21 =  column[23],
-        )
+)
     context = {}
     return render(request,template,context)
