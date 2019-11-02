@@ -79,6 +79,7 @@ const data = [
 class App extends Component {    
 	render () {
 		return (
+	       <div style={{ width: '100%', height: 300 }}>
 	       <ResponsiveContainer>
 		       <BarChart
 		          data={data}
@@ -97,6 +98,7 @@ class App extends Component {
 		          <ReferenceLine y={27} label={{ infront: 'true', position: 'right', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 		       </BarChart>
 		   </ResponsiveContainer>
+		   </div>
 		);
 	}
 }

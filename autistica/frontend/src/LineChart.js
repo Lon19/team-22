@@ -77,10 +77,11 @@ const data = [
 class App extends Component {
 	render () {
 		return (
-        <ResponsiveContainer>
+        <div style={{ width: '100%', height: 300 }}>
+        <ResponsiveContainer width={700} height="80%">
 	        <LineChart
 		        data={data}
-		        margin={{ top: 5, right: 30, left: 5, bottom: 5 }}
+		        margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
 		    	>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="date" />
@@ -95,6 +96,7 @@ class App extends Component {
 		        <ReferenceLine y={27} label={{ infront: 'true', position: 'insideBottomRight', value: 'Extremely Severe', fill: 'black', fontSize: 18}} stroke="red"/>
 		      </LineChart>
 		 </ResponsiveContainer>
+		 </div>
 	     );
 	}
 }
